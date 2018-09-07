@@ -170,14 +170,6 @@
                 "description": "Password for the administrator account of VM-Series"
             }
         },
-        "baseUrl": {
-            "type": "string",
-            "metadata": {
-                "artifactsBaseUrl": "",
-                "description": "URL to acquire other VM-Series for Azure templates"
-            },
-            "defaultValue": "https://raw.githubusercontent.com/jpeezus/Azure-AvailabilityZone/master"
-        },
         "PublicIPNewOrExisting": {
             "type": "string",
             "defaultValue": "new",
@@ -297,6 +289,7 @@
         }
     },
     "variables": {
+        "baseUrl": "https://raw.githubusercontent.com/jpeezus/Azure-AvailabilityZone/master",
         "imagePublisher": "paloaltonetworks",
         "imageSku": "bundle2",
         "imageOffer": "vmseries1",
@@ -333,12 +326,12 @@
                 }
             }
         ],
-        "storageAccountSetupURL": "[concat(parameters('baseUrl'),'/storageAccount-',parameters('storageAccountNewOrExisting'),'.json')]",
-        "nsgSetupURL": "[concat(parameters('baseUrl'),'/nsg-new.json')]",
-        "SettingUpPublicIPUrl": "[concat(parameters('baseUrl'),'/publicip-',parameters('PublicIPNewOrExisting'),'.json')]",
-        "vnetSetupURL": "[concat(parameters('baseUrl'),'/vnet-', parameters('vnetNewOrExisting'),'.json')]",
-        "setupNICsURL": "[concat(parameters('baseUrl'),'/setupNICS-', parameters('vnetNewOrExisting'),'.json')]",
-        "vmTemplateUrl": "[concat(parameters('baseUrl'), '/virtual-machine-', parameters('authenticationType'),'-bs-', parameters('bootstrap'), '.json')]",
+        "storageAccountSetupURL": "[concat(variables('baseUrl'),'/storageAccount-',parameters('storageAccountNewOrExisting'),'.json')]",
+        "nsgSetupURL": "[concat(variables('baseUrl'),'/nsg-new.json')]",
+        "SettingUpPublicIPUrl": "[concat(variables('baseUrl'),'/publicip-',parameters('PublicIPNewOrExisting'),'.json')]",
+        "vnetSetupURL": "[concat(variables('baseUrl'),'/vnet-', parameters('vnetNewOrExisting'),'.json')]",
+        "setupNICsURL": "[concat(variables('baseUrl'),'/setupNICS-', parameters('vnetNewOrExisting'),'.json')]",
+        "vmTemplateUrl": "[concat(variables('baseUrl'), '/virtual-machine-', parameters('authenticationType'),'-bs-', parameters('bootstrap'), '.json')]",
 		"customDataField": "[concat('storage-account=', parameters('BootstrapStorageAccount'), ',access-key=', parameters('StorageAccountAccessKey'), ',file-share=', parameters('StorageAccountFileShare'),',share-directory=', parameters('StorageAccountFileShareDirectory'))]"
     },
     "resources": [
