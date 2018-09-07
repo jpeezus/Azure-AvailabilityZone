@@ -1,0 +1,98 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "eastus"
+        },
+        "storageAccountName": {
+            "value": "jpadminsas"
+        },
+        "storageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "storageAccountNewOrExisting": {
+            "value": "new"
+        },
+        "storageAccountExistingRG": {
+            "value": "jpadminrg"
+        },
+        "publicIPAddressName": {
+            "value": "jpadmindns"
+        },
+        "PublicIPNewOrExisting": {
+            "value": "new"
+        },
+        "PublicIPRGName": {
+            "value": "jpadminrg"
+        },
+        "vmName": {
+            "value": "jpadminfw"
+        },
+        "adminUsername": {
+            "value": "jpadmin"
+        },
+        "adminPassword": {
+            "value": null
+        },
+        "authenticationType": {
+            "value": "password"
+        },
+        "vmSize": {
+            "value": "Standard_D3_v2"
+        },
+        "imageVersion": {
+            "value": "latest"
+        },
+        "srcIPInboundNSG": {
+            "value": "199.167.0.0/16"
+        },
+        "virtualNetworkName": {
+            "value": "jpadminfwVNET"
+        },
+        "virtualNetworkExistingRGName": {
+            "value": "jpadminrg"
+        },
+        "virtualNetworkAddressPrefixes": {
+            "value": [
+                "10.5.0.0/16"
+            ]
+        },
+        "vnetNewOrExisting": {
+            "value": "new"
+        },
+        "subnet0Name": {
+            "value": "Mgmt"
+        },
+        "subnet1Name": {
+            "value": "Untrust"
+        },
+        "subnet2Name": {
+            "value": "Trust"
+        },
+        "subnet0Prefix": {
+            "value": "10.5.0.0/24"
+        },
+        "subnet1Prefix": {
+            "value": "10.5.1.0/24"
+        },
+        "subnet2Prefix": {
+            "value": "10.5.2.0/24"
+        },
+        "subnet0StartAddress": {
+            "value": "10.5.0.4"
+        },
+        "subnet1StartAddress": {
+            "value": "10.5.1.4"
+        },
+        "subnet2StartAddress": {
+            "value": "10.5.2.4"
+        },
+        "bootstrap": {
+            "value": "no"
+        },
+        "customData": {
+            "value": "storage-account=None,access-key=None,file-share=None,share-directory=None"
+        }
+    }
+}
