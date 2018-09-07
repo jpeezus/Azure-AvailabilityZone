@@ -1,0 +1,1 @@
+# Azure Availability zones
