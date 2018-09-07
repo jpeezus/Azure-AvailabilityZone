@@ -81,8 +81,8 @@
             }
         },
         "virtualNetworkAddressPrefixes": {
-            "type": "string",
-            "defaultValue": "192.168.0.0/16",
+            "type": "array",
+            "defaultValue": "[array('192.168.0.0/16')]",
             "metadata": {
                 "description": "Virtual network address CIDR"
             }
@@ -161,6 +161,24 @@
             "type": "string",
             "metadata": {
                 "description": "Username of the administrator account of VM-Series"
+            }
+        },
+        "authenticationType": {
+            "type": "string",
+            "metadata": {
+                "descritpion": "Type of administrator user authentication "
+            },
+            "allowedValues": [
+                "sshPublicKey",
+                "password"
+            ],
+            "defaultValue": "password"
+        },
+        "sshKey": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "SSH rsa public key file as a string."
             }
         },
         "adminPassword": {
@@ -268,25 +286,7 @@
 			"metadata": {
 					"description": "The subdirectory hosting the bootstrap files. Only required if hosting multiple bootstrap directories on the same share"
 				}
-		},
-        "authenticationType": {
-            "type": "string",
-            "metadata": {
-                "descritpion": "Type of administrator user authentication "
-            },
-            "allowedValues": [
-                "sshPublicKey",
-                "password"
-            ],
-            "defaultValue": "password"
-        },
-        "sshKey": {
-            "type": "string",
-            "defaultValue": "",
-            "metadata": {
-                "description": "SSH rsa public key file as a string."
-            }
-        }
+		}
     },
     "variables": {
         "baseUrl": "https://raw.githubusercontent.com/jpeezus/Azure-AvailabilityZone/master",
