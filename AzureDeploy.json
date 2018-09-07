@@ -2,12 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.20",
     "parameters": {
-        "location": {
-            "type": "string",
-            "metadata": {
-                "description": "The region to deploy the resources into"
-            }
-        },
         "srcIPInboundNSG": {
             "type": "string",
             "metadata": {
@@ -53,7 +47,7 @@
         "zone": {
             "type": "string",
             "metadata": {
-                "description": "select the availability zone you would like to deploy the VM-Series into"
+                "description": "Select the availability zone you would like to deploy the VM-Series into"
             },
             "defaultValue": "1",
             "allowedValues": [
