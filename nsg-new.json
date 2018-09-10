@@ -12,7 +12,7 @@
         "type": "string"
       },
       "virtualNetworkAddressPrefix": {
-        "type": "array"
+        "type": "string"
       }
   },
   "variables":
